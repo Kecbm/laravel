@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* Retorna a view padrão do Laravel */
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+/* Retorna o texto */
+
 Route::get('/', function () {
-    return view('welcome');
+    return ('Hello, world');
 });
+
+/* ESTOU EM: Aula 8 - 10:10 min */
