@@ -8,7 +8,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        // Retornando a view que está na pasta user (dentro da pasta "/app/resources/views")
+        return view('user.index');
     }
 
     /**
