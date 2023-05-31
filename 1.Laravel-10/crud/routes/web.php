@@ -13,16 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Retorna a view padrão do Laravel */
+// inicia o servidor
+/* php artisan serve
+Iniciará o servidor em http://localhost:8000 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Retorna a view padrão do Laravel
+/* Route::get('/', function () {
+    return view('welcome');
+}); */
 
-/* Retorna o texto */
-
-Route::get('/', function () {
+// Retorna o texto
+/* Route::get('/', function () {
     return ('Hello, world');
-});
+}); */
 
-/* ESTOU EM: Aula 8 - 10:10 min */
+// criar um crontrolador (o comando -r já trás os metodos resouces do laravel (os verbos HTTP)): 
+/* // php artisan make:controller HomeController -r */
+
+// Quando estiver na rota "/", será retornado o método index 
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+
+// ESTOU EM: Aula  - 17:50 min
+/* TODO: Conectar essa aplicação a um BD no phpMyAdmin (o passo a passo está no GPT) > rodar o comando: php artisan migrate --seed */
