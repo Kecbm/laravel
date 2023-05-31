@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        /* Cria 10 usuários fake
+        Comando: php artisan migrate --seed */
+        \App\Models\User::factory(10)->create();
     }
 }
