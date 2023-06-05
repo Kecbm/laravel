@@ -28,10 +28,11 @@ Iniciará o servidor em http://localhost:8000 */
 }); */
 
 // criar um crontrolador (o comando -r já trás os metodos resouces do laravel (os verbos HTTP)): 
-/* // php artisan make:controller HomeController -r */
+/* php artisan make:controller HomeController -r */
 
 // Quando estiver na rota "/", será retornado o método index 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
-// ESTOU EM: Aula  - 17:50 min
-/* TODO: Conectar essa aplicação a um BD no phpMyAdmin (o passo a passo está no GPT) > rodar o comando: php artisan migrate --seed */
+/* Após conectar aplicação a um BD no phpMyAdmin > rodar o comando: php artisan migrate --seed */
+
+// ESTOU EM: Aula  - XX:XX min
