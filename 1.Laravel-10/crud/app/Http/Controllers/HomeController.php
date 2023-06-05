@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,7 +10,15 @@ class HomeController extends Controller
     public function index()
     {
         // Retornando a view que está na pasta user (dentro da pasta "/app/resources/views")
-        return view('user.index');
+        /* return view('user.index'); */
+
+        // getAll na tabela users do BD
+        $users = User::all();
+
+        // Retornando os dados de getAll
+        return view('user.index', [
+            'users' => $users
+        ]);
     }
 
     /**
