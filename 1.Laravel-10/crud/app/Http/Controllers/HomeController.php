@@ -50,7 +50,21 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        // Esse método retorna 1 usuário de acordo com o id
+
+        //  dd faz o log da variável para o código, faz um log do id que está na url
+        /* dd($id); */
+
+        // GetById user no BD
+        $user = User::find($id);
+
+        // log do user
+        // dd('user->email: ', $user->email);
+
+        // Retorna os dados do GetById
+        return view('user.show', [
+            'user' => $user
+        ]);
     }
 
     /**
