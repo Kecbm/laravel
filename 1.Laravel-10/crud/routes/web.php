@@ -31,8 +31,13 @@ Iniciará o servidor em http://localhost:8000 */
 /* php artisan make:controller HomeController -r */
 
 // Quando estiver na rota "/", será retornado o método index 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+// GetAll users
+Route::get('/users', [\App\Http\Controllers\HomeController::class, 'index']);
 
 /* Após conectar aplicação a um BD no phpMyAdmin > rodar o comando: php artisan migrate --seed */
+
+// GetById users
+// name: nomeia a rota para que a view acesse a informação 
+Route::get('/users/{id}', [\App\Http\Controllers\HomeController::class, 'show'])->name('user.show');
 
 // ESTOU EM: Aula  - XX:XX min
