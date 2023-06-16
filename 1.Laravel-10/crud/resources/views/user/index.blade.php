@@ -12,7 +12,7 @@
   </head>
   <body>
     <main>
-        <h1>Index</h1>
+        <h1>GetAll users</h1>
 
         <table class="table">
             <thead>
@@ -20,6 +20,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Cadastro</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,9 @@
                         <th scope="row">{{$user->id}}</th>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
+                        <td>
+                            <a type="button" href="{{route('user.show', $user->id)}}" class="btn btn-success">Verificar</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
