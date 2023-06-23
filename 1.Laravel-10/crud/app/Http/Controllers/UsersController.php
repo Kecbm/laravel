@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class UsersController extends Controller
 {
     public function index()
     {
@@ -21,33 +21,16 @@ class HomeController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         // Esse método retorna 1 usuário de acordo com o id
@@ -67,37 +50,50 @@ class HomeController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        // Esse método edita um usuário específico
+
+        /* dd($id); */
+
+        $user = User::find($id);
+
+        return view('user.edit', [
+            'user' => $user
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        /* dd($id); */
+
+        // Acessando todos os dados da request
+        /* dd($request); */
+
+        // Retorna os dados enviados via formulário
+        /* dd($request->all()); */
+
+        // Retorna apenas o nome e o email enviados pelo formulário
+        /* dd($request->only(['name', 'email'])); */
+
+        $data = $request->only(['name', 'email']);
+
+        /* dd($data); */
+
+        // Acessando o usuário específico no BD
+        $user = User::find($id);
+
+       /*  dd($user); */
+
+       // Atualizando o BD com as informações que vem do formulário
+       $user->update($data);
+
+       // Após atualizar o user, retorna para a página anterior: o formulário
+       return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        dd($id);
     }
 }
