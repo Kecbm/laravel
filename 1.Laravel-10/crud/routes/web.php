@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// Importando a controller aqui, é só chamar ela direto no código
+use \App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,12 +34,21 @@ Iniciará o servidor em http://localhost:8000 */
 
 // Quando estiver na rota "/", será retornado o método index 
 // GetAll users
-Route::get('/users', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/users', [UsersController::class, 'index']);
 
 /* Após conectar aplicação a um BD no phpMyAdmin > rodar o comando: php artisan migrate --seed */
 
 // GetById users
-// name: nomeia a rota para que a view acesse a informação 
-Route::get('/users/{id}', [\App\Http\Controllers\HomeController::class, 'show'])->name('user.show');
+// name: nomeia a rota para que a view acesse a informação
+Route::get('/users/{id}', [UsersController::class, 'show'])->name('user.show');
 
-// ESTOU EM: Aula  - XX:XX min
+// Edit user
+Route::get('/users/edit/{id}', [UsersController::class, 'edit'])->name('user.edit');
+
+// Update user
+Route::put('/user/update/{id}', [UsersController::class, 'update'])->name('user.update');
+
+// Destroy user
+Route::delete('/user/delete/{id}', [UsersController::class, 'destroy'])->name('user.destroy');
+
+// ESTOU EM: Aula 11 - 07:45 min
