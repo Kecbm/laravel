@@ -16,9 +16,7 @@ Curso [Laravel 10 - Torne-se Programador Junior/Pleno - COM TESTS](https://www.g
 
 <br>
 
-<img title="Laravel" alt="Laravel" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" />        
-<img title="Bootstrap" alt="Bootstrap" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
-<img title="MySQL" alt="MySQL" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+<img title="Laravel" alt="Laravel" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" /> <img title="Bootstrap" alt="Bootstrap" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" /> <img title="MySQL" alt="MySQL" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
 
 Banco de dados: `phpMyAdmin`
 
