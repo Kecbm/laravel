@@ -21,6 +21,8 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Cadastro</th>
+                    <th scope="col">Dados</th>
+                    <th scope="col">Deletar</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +33,17 @@
                         <td>{{$user->email}}</td>
                         <td>
                             <a type="button" href="{{route('user.show', $user->id)}}" class="btn btn-success">Verificar</a>
+                        </td>
+                        <td>
+                            <a type="button" href="{{route('user.edit', $user->id)}}" class="btn btn-warning">Editar</a>
+                        </td>
+                        <td>
+                            <!-- Estrutura HTML para deletar um usuário -->
+                            <form action="{{route('user.destroy', $user->id)}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button method="post" type="submit" href="{{route('user.destroy', $user->id)}}" class="btn btn-danger">Excluir o usuário {{$user->id}}</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
