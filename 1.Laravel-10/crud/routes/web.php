@@ -51,4 +51,7 @@ Route::put('/user/update/{id}', [UsersController::class, 'update'])->name('user.
 // Destroy user
 Route::delete('/user/delete/{id}', [UsersController::class, 'destroy'])->name('user.destroy');
 
+
+// OBS.: Estudos pausados para focar em Next e em React
+
 // ESTOU EM: Aula 11 - 07:45 min
